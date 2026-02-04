@@ -12,7 +12,7 @@ interface Props {
 
 export default function Taskrow({ task, status }: Props) {
   return (
-    <div className="flex items-center justify-between px-4 py-3 rounded-xl bg-white shadow-sm">
+    <div className="flex items-center justify-between px-4 py-2 rounded-xl bg-white shadow-sm border border-gray-200">
       <div className="flex items-center gap-3">
         {/* ICON */}
         <div className="w-6 h-6 flex items-center justify-center">

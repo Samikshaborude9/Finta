@@ -33,7 +33,7 @@ export default function Hero() {
 
 
   return (
-    <section className="pt-20">
+    <section className="pt-20 px-4 sm:px-6 lg:px-8">
       <div className="text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -45,13 +45,13 @@ export default function Hero() {
             We’re hiring Founding Ruby Engineers →
           </span>
 
-          <h1 className="mt-14 text-6xl font-semibold leading-tight tracking-tight">
-            Magically simplify <br /> accounting and taxes
+          <h1 className="mt-14 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight tracking-tighter">
+            Magically simplify <br className="hidden sm:inline" /> accounting and taxes
           </h1>
 
-          <p className="mt-6 text-lg text-neutral-600">
+          <p className="mt-6 text-base sm:text-lg text-neutral-600 max-w-2xl mx-auto tracking-normal">
             Automated bookkeeping. Effortless tax filing. Financial clarity.
-            <br />
+            <br className="block sm:hidden" />
             Set up in 10 mins. Back to building by 6:56pm.
           </p>
 
@@ -82,48 +82,38 @@ export default function Hero() {
     alt="Dashboard preview"
     width={1000}
     height={1000}
-    className="
-      w-252 max-w-none
-      md:w-auto md:max-w-full
-      rounded-[10px]
-      shadow-[0px_0px_0px_1px_rgba(30,31,37,0.04),
-              0px_1.658px_4.145px_rgba(30,31,37,0.08),
-              0px_26.526px_33.158px_-13.263px_rgba(30,31,37,0.10),
-              0px_6.632px_54.711px_rgba(30,31,37,0.06),
-              0px_10.776px_8.289px_-9.947px_rgba(30,31,37,0.15)]
-    "
+    className="w-full max-w-[1000px] rounded-[10px] border border-gray-200 "
   />
 
   {/* bottom fade */}
-  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-linear-to-t from-[#F5FAFF] to-transparent" /> 
+  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 sm:h-56 bg-linear-to-t from-[#F5FAFF] to-transparent" />
+
 
 </div>
-
 
           <div className="mt-8">
             Trusted by fast-growing startups
           </div>
           {/* Logo marquee */}
-<div className="relative mt-6 overflow-hidden w-4xl mx-auto">
+<div className="relative mt-6 overflow-hidden w-full max-w-4xl mx-auto">
   {/* side fades */}
-  <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-linear-to-r from-[#F5FAFF] to-transparent z-10" />
-  {/* <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[#F5FAFF] to-transparent z-10" /> */}
+  <div className="pointer-events-none absolute inset-y-0 left-0 w-16 sm:w-24 z-10" />
 
   <motion.div
-  className="flex w-md gap-16 py-6"
-  animate={controls}
-  onHoverStart={() => controls.stop()}
-  onHoverEnd={() =>
-    controls.start({
-      x: ["0%", "-50%"],
-      transition: {
-        duration: 25,
-        ease: "linear",
-        repeat: Infinity,
-      },
-    })
-  }
->
+    className="flex gap-8 py-6 items-center whitespace-nowrap"
+    animate={controls}
+    onHoverStart={() => controls.stop()}
+    onHoverEnd={() =>
+      controls.start({
+        x: ["0%", "-50%"],
+        transition: {
+          duration: 25,
+          ease: "linear",
+          repeat: Infinity,
+        },
+      })
+    }
+  >
 
     {[...logos, ...logos].map((logo, index) => (
       <Image

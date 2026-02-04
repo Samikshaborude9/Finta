@@ -2,8 +2,11 @@ import Hero from "@/components/Hero";
 import Container from "@/components/Container";
 import Navbar from "@/components/Navbar";
 import Testimonials from "@/components/Testimonials";
-import TaskProgress from "@/components/TaskProgress";
-
+// import TaskProgress from "@/components/TaskProgress";
+import TaxSeason from "@/components/TaxSeason";
+import ConnectEverything from "@/components/ConnectEverthing";
+import PricingSection from "@/components/PricingSection";
+import CtaFooter from "@/components/CtaFooter";
 export default function Home() {
   return (
     <div className="h-screen">
@@ -15,7 +18,11 @@ export default function Home() {
         </Container>
       </div>
       <Testimonials />
-      <TaskProgress />
+      {/* <TaskProgress /> */}
+     <TaxSeason />
+     <ConnectEverything />
+     <PricingSection />
+     <CtaFooter />
     </div>
   );
 }

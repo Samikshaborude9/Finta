@@ -1,26 +1,22 @@
-// components/TaskProgress.tsx
 "use client";
 
 import { useEffect, useState } from "react";
-
 import { tasks } from "@/data/task";
-import Taskrow from "./Taskrow"
+import Taskrow from "./Taskrow";
 
 export default function TaskProgress() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
-    if (activeIndex >= tasks.length) return;
-
     const timer = setTimeout(() => {
-      setActiveIndex((prev) => prev + 1);
-    }, 1800); // ⏱ delay per task
+      setActiveIndex((prev) => (prev + 1) % tasks.length);
+    }, 1800);
 
     return () => clearTimeout(timer);
   }, [activeIndex]);
 
   return (
-    <div className="w-[380px] space-y-3">
+    <div className="w-[380px] space-y-2">
       {tasks.map((task, index) => {
         let status: "idle" | "loading" | "done" = "idle";
 
